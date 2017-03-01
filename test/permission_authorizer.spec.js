@@ -124,13 +124,18 @@ describe('Permission part validator', () => {
     return roleConfig;
   }
 
-  it.only('should authorized for last permission of last role', () => {
+  /**
+   * come up with optimized trie structure to map permission down each node depth
+   */
+  it.skip('should authorized for last permission of last role', () => {
+
     // resolve last permission of last role
     const configKeys = Object.keys(roleConfig.roles);
     const lastRole = configKeys[configKeys.length - 1];
     const lastPermission = roleConfig.roles[lastRole]
       .permissions[roleConfig.roles[lastRole].permissions.length - 1];
 
+    console.log('inspect last permission and last role');
     console.log({ lastRole, lastPermission });
 
     var startTime = process.hrtime();
