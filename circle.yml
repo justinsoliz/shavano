@@ -6,6 +6,6 @@ dependencies:
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
 deployment:
   npm:
-    tag: /v[0-9]+(\.[0-9]+)*/
+    tag: /v\d.*/
     commands:
-      - echo 'deploy here...'
+      - echo "publishing..."
