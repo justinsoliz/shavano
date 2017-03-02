@@ -6,6 +6,6 @@ dependencies:
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
 deployment:
   npm:
-		branch: master
+    branch: master
     commands:
       - echo "publishing..."
