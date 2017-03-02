@@ -7,6 +7,7 @@ describe('Permissions Authorizer', () => {
 
   describe('Simple permission test', () => {
     let authorizer, validPermission = 'users:list_users';
+
     beforeEach(() => {
       authorizer = PermissionStrategy({
         roles: { 'admin': { permissions: [ validPermission ] } }
