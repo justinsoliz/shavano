@@ -4,8 +4,11 @@ machine:
 dependencies:
   pre:
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+test:
+  post:
+    - npm run build
 deployment:
   npm:
     tag: /v\d.*/
     commands:
-      - echo "publishing..."
+      - npm publish --tag beta ./.build
