@@ -7,8 +7,8 @@ dependencies:
 test:
   override:
     - npm t
-      environment:
-        TEST_REPORT_PATH: $CIRCLE_TEST_REPORTS/junit/test-results.xml
+        environment:
+          TEST_REPORT_PATH: $CIRCLE_TEST_REPORTS/junit/test-results.xml
   post:
     - npm run build
 deployment:
