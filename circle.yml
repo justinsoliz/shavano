@@ -5,6 +5,10 @@ dependencies:
   pre:
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
 test:
+  override:
+    - npm t
+			environment:
+				TEST_REPORT_PATH: $CIRCLE_TEST_REPORTS/junit/test-results.xml
   post:
     - npm run build
 deployment:
