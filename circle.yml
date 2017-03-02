@@ -1,3 +1,7 @@
+general:
+  branches:
+    only:
+      - master
 machine:
   node:
     version: 6.9.1
@@ -6,5 +10,6 @@ dependencies:
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
 deployment:
   npm:
+    tag: /v\d.*/
     commands:
       - echo "publishing..."
